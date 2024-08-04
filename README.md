@@ -1,8 +1,8 @@
-User API Documentation (Backend)
+#User API Documentation (Backend)
 
 This is a simple CRUD API for users with the ability to list all users or a single user, and token-based authentication via login. The API is built using Node.js and Express with TypeScript and TypeORM for integration with a PostgreSQL database. For more information on versions and libraries, please refer to the package.json file.
 
-->Prerequisites:
+#Prerequisites:
 To properly set up and install the project, the following tools need to be installed:
 -Node.js
 -npm
@@ -11,7 +11,7 @@ To properly set up and install the project, the following tools need to be insta
 -Docker Compose
 -Code Editor (VS Code was my choice)
 
-->Steps to run the project on a Linux environment:
+#Steps to run the project on a Linux environment:
 
 After downloading the project, navigate to the project folder and run the following command to install dependencies:
 `npm install`
@@ -23,7 +23,7 @@ With the database created in a container, you can now start the application:
 `npm start`
 
 
-->Endpoints
+#Endpoints
 The application runs at http://localhost:3131/users/, and all routes use /users.
 
 Create User
@@ -71,16 +71,16 @@ GET /
 Description: Returns a list of all users.
 Authentication: User authentication required.
 
-->Notes
+#Notes
 For deletion and update actions, the action can only be performed by the authenticated user.
 Scripts (As per package.json scripts)
 `npm run create-db`
-# docker run -d --name my-postgres-db -e POSTGRES_USER=userCrud -e POSTGRES_PASSWORD=userCrud1234 -e POSTGRES_DB=userCrud -p 5432:5432 postgres
+-> docker run -d --name my-postgres-db -e POSTGRES_USER=userCrud -e POSTGRES_PASSWORD=userCrud1234 -e POSTGRES_DB=userCrud -p 5432:5432 postgres
 
 `npm start`
-# npx tsx src/index.ts
+-> npx tsx src/index.ts
 
-->Other Useful Commands
+#Other Useful Commands
 
 Stop and remove all Docker containers (be very careful with this):
 `docker stop $(docker ps -aq)`
@@ -88,14 +88,14 @@ Stop and remove all Docker containers (be very careful with this):
 
 Find and kill process occupying port 5432:
 `sudo lsof -i :5432`
-# Returns PID
+-> Returns PID <-
 `sudo kill -9 PID`
 
 Stop and start the project container:
 `docker stop my-postgres-db`
 `docker start my-postgres-db`
 
-->Dependencies Documentation and Links
+#Dependencies Documentation and Links
 Typescript: https://www.typescriptlang.org/docs/
 Node.js: https://nodejs.org/docs/latest/api/
 Express: https://expressjs.com/en/starter/installing.html
